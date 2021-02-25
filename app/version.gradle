@@ -1,0 +1,36 @@
+def final staticVerCode = 1
+def final staticVerName = "1.0"
+
+ext.getVersionName = { ->
+    if (project.hasProperty("buildName")) {
+        return buildName
+    } else {
+        return staticVerName
+    }
+}
+
+ext.getVersionCode = { ->
+    if (project.hasProperty("buildNumber")) {
+        return buildNumber.toInteger()
+    } else {
+        return staticVerCode
+    }
+}
+
+ext {
+    core = "1.3.2"
+    appcompat = "1.2.0"
+    material = "1.3.0"
+    junit = "4.13.2"
+    fragment = "1.3.0"
+    activity = "1.2.0"
+    recyclerview = "1.1.0"
+    constraint = "2.0.4"
+    livedata = "2.3.0"
+    viewmodel = "2.3.0"
+    navfragment = "2.3.3"
+    navui = "2.3.3"
+    navdynamic = "2.3.3"
+    hilt = "2.31.2-alpha"
+    hiltviewmodel = "1.0.0-alpha03"
+}

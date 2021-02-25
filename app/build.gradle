@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: 'version.gradle'
+apply from: 'signing.gradle'
+
+def verCode = getVersionCode()
+def verName = getVersionName()
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.abreuarthur.androidtemplate"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode verCode
+        versionName verName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        prod {
+            dimension "environment"
+            applicationIdSuffix ".prod"
+//            firebaseAppDistribution {
+//                releaseNotes = "Test Notes Prod firebaseAppDistribution"
+//                serviceCredentialsFile = "$rootDir/app/prod/android-template-project-dev.json"
+//                groups = "cli-test-group"
+//            }
+        }
+
+        dev {
+            dimension "environment"
+            applicationIdSuffix ".dev"
+//            firebaseAppDistribution {
+//                releaseNotes = "Test Notes Dev firebaseAppDistribution"
+//                serviceCredentialsFile = "$rootDir/app/dev/android-template-project-prod.json"
+//                groups = "cli-test-group"
+//            }
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Android Core Dependencies
+    implementation "androidx.core:core-ktx:$core"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
+
+    // Android Jetpack Components
+    implementation "androidx.fragment:fragment-ktx:$fragment"
+    implementation "androidx.activity:activity-ktx:$activity"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navfragment"
+    implementation "androidx.navigation:navigation-ui-ktx:$navui"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navdynamic"
+    androidTestImplementation "androidx.navigation:navigation-testing:2.3.3"
+
+    // Hilt Dependency Injection
+    implementation "com.google.dagger:hilt-android:$hilt"
+    kapt "com.google.dagger:hilt-android-compiler:2.31.2-alpha"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltviewmodel"
+    kapt "androidx.hilt:hilt-compiler:1.0.0-alpha03"
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+}
