@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018928737642",
+    "project_id": "android-template-dev-abreu",
+    "storage_bucket": "android-template-dev-abreu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018928737642:android:015958a10ca86d4443c913",
+        "android_client_info": {
+          "package_name": "com.abreuarthur.androidtemplate.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018928737642-evl6bsqaav73eegril856kvroqmn7ch4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZv85JXOUaUDhF9X4ZMiEJ8cjNCufhHHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018928737642-evl6bsqaav73eegril856kvroqmn7ch4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

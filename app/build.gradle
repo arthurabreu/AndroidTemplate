@@ -1,8 +1,11 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.firebase.appdistribution'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
     id 'org.jlleitschuh.gradle.ktlint'
 }
 
@@ -32,7 +35,6 @@ android {
     productFlavors {
         prod {
             dimension "environment"
-            applicationIdSuffix ".prod"
 //            firebaseAppDistribution {
 //                releaseNotes = "Test Notes Prod firebaseAppDistribution"
 //                serviceCredentialsFile = "$rootDir/app/prod/android-template-project-dev.json"
@@ -62,6 +64,18 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    sourceSets {
+        dev {
+            res {
+                srcDirs 'src/dev/res'
+            }
+        }
+        prod {
+            res {
+                srcDirs 'src/prod/res'
+            }
+        }
     }
 }
 
