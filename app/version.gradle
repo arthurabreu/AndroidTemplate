@@ -31,6 +31,6 @@ ext {
     navfragment = "2.3.3"
     navui = "2.3.3"
     navdynamic = "2.3.3"
-    hilt = "2.31.2-alpha"
+    hilt = "2.32-alpha"
     hiltviewmodel = "1.0.0-alpha03"
 }

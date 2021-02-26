@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id 'org.jlleitschuh.gradle.ktlint'
 }
 
@@ -52,12 +53,6 @@ android {
 
     buildFeatures {
         dataBinding = true
-    }
-
-    buildscript {
-        repositories {
-            mavenCentral()
-        }
     }
 
     compileOptions {
