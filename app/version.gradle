@@ -33,4 +33,6 @@ ext {
     navdynamic = "2.3.3"
     hilt = "2.32-alpha"
     hiltviewmodel = "1.0.0-alpha03"
+    viewBindingDelegate = "1.4.1"
+    coroutines = "1.4.2"
 }

@@ -56,6 +56,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 
     compileOptions {
@@ -106,6 +107,13 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navui"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navdynamic"
     androidTestImplementation "androidx.navigation:navigation-testing:2.3.3"
+
+    // View Binding Delegate
+    implementation "com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:$viewBindingDelegate"
+
+    // Coroutines Extensions
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
     // Hilt Dependency Injection
     implementation "com.google.dagger:hilt-android:$hilt"
